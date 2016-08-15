@@ -1,0 +1,21 @@
+@charset "UTF-8";
+@import "settings";
+
+//将px转换成rem
+@function pxToRem($n) {
+    @if $n == 1 {
+        @return 1px;
+    } @else {
+        @return ($n / $remBase) + rem;
+    }
+}
+
+// 为颜色添加白色，以百分比形式
+@function tint($color, $percent) {
+    @return mix(white, $color, $percent);
+}
+
+// 为颜色添加黑色，以百分比形式
+@function shade($color, $percent) {
+    @return mix(black, $color, $percent);
+}

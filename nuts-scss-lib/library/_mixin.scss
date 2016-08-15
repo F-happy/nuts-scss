@@ -1,0 +1,52 @@
+@charset "UTF-8";
+@import "settings";
+
+//背景图片处理
+@mixin backgroundImg($value) {
+    background: $value no-repeat;
+    background-size: 100% auto;
+}
+
+// 出多少宽度则显示省略号
+%ellipsis-basic {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+@mixin ellipsis($width:100%) {
+    @extend %ellipsis-basic;
+    width: $width;
+}
+
+//盒子布局函数
+@mixin box($align: center, $pack: center) {
+    @each $prefix in $prefix-list {
+        display: #{$prefix}-box;
+        #{$prefix}-box-align: $align;
+        #{$prefix}-box-pack: $pack;
+    }
+}
+
+// prefixer
+// 用于在属性上加前缀
+//-----------------------------------------------------
+@mixin prefixer($property, $value, $prefixes: $prefix-list) {
+    @each $prefix in $prefixes {
+        @if $prefix == webkit {
+            -webkit-#{$property}: $value;
+        } @else if $prefix == moz {
+            -moz-#{$property}: $value;
+        } @else if $prefix == ms {
+            -ms-#{$property}: $value;
+        } @else if $prefix == o {
+            -o-#{$property}: $value;
+        }
+    }
+    @if $prefixNo {
+        #{$property}: $value;
+    }
+}
+
+@mixin border-radius($value) {
+    @include prefixer(border-radius, $value);
+}
