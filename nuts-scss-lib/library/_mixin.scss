@@ -13,6 +13,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 @mixin ellipsis($width:100%) {
     @extend %ellipsis-basic;
     width: $width;
@@ -21,9 +22,9 @@
 //盒子布局函数
 @mixin box($align: center, $pack: center) {
     @each $prefix in $prefix-list {
-        display: #{$prefix}-box;
-        #{$prefix}-box-align: $align;
-        #{$prefix}-box-pack: $pack;
+        display: -#{$prefix}-box;
+        -#{$prefix}-box-align: $align;
+        -#{$prefix}-box-pack: $pack;
     }
 }
 
@@ -49,4 +50,10 @@
 
 @mixin border-radius($value) {
     @include prefixer(border-radius, $value);
+}
+
+@mixin border-box($value) {
+    width: $value;
+    height: $value;
+    @include border-radius(50%);
 }

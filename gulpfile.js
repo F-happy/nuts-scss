@@ -10,7 +10,7 @@ gulp.task('test', ()=> {
     gulp.src('./test/*.scss')
         .pipe(sass({
             includePaths: require('./index').includePaths,
-            outputStyle: 'compressed'
+            // outputStyle: 'compressed'
         }).on('error', sass.logError))
         .pipe(gulp.dest('./test/'));
 });

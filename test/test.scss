@@ -1,1 +1,6 @@
 @import "nuts-scss";
+
+.test {
+    @include box();
+    @include border-box(100px);
+}
