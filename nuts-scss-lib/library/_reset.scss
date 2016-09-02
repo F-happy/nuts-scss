@@ -16,12 +16,25 @@ html, body, div, p, header, button {
 
 html {
     line-height: 1;
-    font-family: Helvetica, sans-serif;
+
+    // https://github.com/AlloyTeam/Mars/blob/master/solutions/font-family.md
+    // iOS 4.0+ 使用英文字体 Helvetica Neue，之前的iOS版本降级使用 Helvetica。
+    // 中文字体设置为华文黑体STHeiTi。
+    // 需补充说明，华文黑体并不存在iOS的字体库中(http://support.apple.com/kb/HT5484?viewlocale=en_US)，
+    // 但系统会自动将华文黑体STHeiTi兼容命中系统默认中文字体黑体-简或黑体-繁：
+    // 原生Android下中文字体与英文字体都选择默认的无衬线字体。
+    // 4.0之前版本英文字体原生Android使用的是Droid Sans，中文字体原生Android会命中Droid Sans Fallback。
+    // 4.0+ 中英文字体都会使用原生Android新的Roboto字体。
+    // 其他第三方Android系统也一致选择默认的无衬线字体。
+    font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
 }
 
 body {
     //clear click shadow in ios
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+    // 使前端列表也可以实现客户端的滚动效果
+    -webkit-overflow-scrolling: touch;
 }
 
 /**

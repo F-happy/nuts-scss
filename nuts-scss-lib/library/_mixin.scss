@@ -30,7 +30,6 @@
 
 // prefixer
 // 用于在属性上加前缀
-//-----------------------------------------------------
 @mixin prefixer($property, $value, $prefixes: $prefix-list) {
     @each $prefix in $prefixes {
         @if $prefix == webkit {
@@ -48,10 +47,12 @@
     }
 }
 
+// 设置元素的圆角
 @mixin border-radius($value) {
     @include prefixer(border-radius, $value);
 }
 
+// 将元素变为圆形
 @mixin border-box($value) {
     width: $value;
     height: $value;
