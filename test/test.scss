@@ -3,11 +3,11 @@
 $prefix-list: webkit;
 
 .test {
-    //@include box();
-    //@include border-box(100px);
-    //@include animation(marquee 2s ease 0s 1);
-    //@extend %border-1px;
-    //@include transform(translate3d(0, 0, 0));
+    @include box();
+    @include border-box(100px);
+    @include animation(marquee 2s ease 0s 1);
+    @extend %border-1px;
+    @include transform(translate3d(0, 0, 0));
     @include animation(down .3s ease-out 0s 1);
     @include clearfix();
 }

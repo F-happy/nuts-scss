@@ -1,4 +1,5 @@
 # nuts-scss
+[![Build Status](https://travis-ci.org/F-happy/nuts-scss.svg?branch=master)](https://travis-ci.org/F-happy/nuts-scss)
 [![npm](https://img.shields.io/npm/v/nuts-scss.svg?style=flat)](https://www.npmjs.com/package/nuts-scss)
 [![npm](https://img.shields.io/npm/l/nuts-scss.svg?style=flat)](https://www.npmjs.com/package/nuts-scss)
 > 我的 scss 样式库
