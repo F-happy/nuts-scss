@@ -1,6 +1,6 @@
 {
   "name": "nuts-scss",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "这是一个 scss 基础样式库",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
   },
   "keywords": [
     "scss",
+    "node",
     "library"
   ],
   "author": "jonnyf",
