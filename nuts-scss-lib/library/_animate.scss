@@ -25,15 +25,18 @@
             @-webkit-keyframes #{$value}{
                 @content;
             }
-        } @else if $prefix == moz {
+        }
+        @if $prefix == moz {
             @-moz-keyframes #{$value}{
                 @content;
             }
-        } @else if $prefix == ms {
+        }
+        @if $prefix == ms {
             @-ms-keyframes #{$value}{
                 @content;
             }
-        } @else if $prefix == o {
+        }
+        @if $prefix == o {
             @-o-keyframes #{$value}{
                 @content;
             }
