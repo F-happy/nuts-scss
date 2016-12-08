@@ -1,7 +1,7 @@
 {
   "name": "nuts-scss",
-  "version": "1.2.2",
-  "description": "这是一个 scss 基础样式库",
+  "version": "1.3.0",
+  "description": "node-sass 下的一个 scss 基础样式库",
   "main": "index.js",
   "scripts": {
     "test": "gulp test"
@@ -12,7 +12,9 @@
   },
   "keywords": [
     "scss",
+    "sass",
     "node",
+    "node-sass",
     "library"
   ],
   "author": "jonnyf",
