@@ -1,0 +1,235 @@
+@charset "UTF-8";
+@import "../../library/animate";
+
+%bounce-base {
+    @include backface-visibility();
+    @include transform-style()
+}
+
+// bounceIn
+@mixin animate-bounceIn() {
+    @include keyframes(bounceIn) {
+        0% {
+            opacity: 0;
+            @include transform(scale(.3));
+        }
+        50% {
+            opacity: 1;
+            @include transform(scale(1.05));
+        }
+        70% {
+            @include transform(scale(.9));
+        }
+        100% {
+            @include transform(scale(1));
+        }
+    }
+    .bounceIn {
+        @include animation-name(bounceIn);
+        @extend %bounce-base;
+    }
+}
+
+// bounceInDown
+@mixin animate-bounceInDown() {
+    @include keyframes(bounceInDown) {
+        0% {
+            opacity: 0;
+            @include transform(translateY(-2000px));
+        }
+        60% {
+            opacity: 1;
+            @include transform(translateY(30px));
+        }
+        80% {
+            @include transform(translateY(-10px));
+        }
+        100% {
+            @include transform(translateY(0));
+        }
+    }
+    .bounceInDown {
+        @include animation-name(bounceInDown);
+        @extend %bounce-base;
+    }
+}
+
+// bounceInLeft
+@mixin animate-bounceInLeft() {
+    @include keyframes(bounceInLeft) {
+        0% {
+            opacity: 0;
+            @include transform(translateX(-2000px));
+        }
+        60% {
+            opacity: 1;
+            @include transform(translateX(30px));
+        }
+        80% {
+            @include transform(translateX(-10px));
+        }
+        100% {
+            @include transform(translateY(0));
+        }
+    }
+    .bounceInLeft {
+        @include animation-name(bounceInLeft);
+        @extend %bounce-base;
+    }
+}
+
+// bounceInRight
+@mixin animate-bounceInRight() {
+    @include keyframes(bounceInRight) {
+        0% {
+            opacity: 0;
+            @include transform(translateX(2000px));
+        }
+        60% {
+            opacity: 1;
+            @include transform(translateX(-30px));
+        }
+        80% {
+            @include transform(translateX(10px));
+        }
+        100% {
+            @include transform(translateY(0));
+        }
+    }
+    .bounceInRight {
+        @include animation-name(bounceInRight);
+        @extend %bounce-base;
+    }
+}
+
+// bounceInUp
+@mixin animate-bounceInUp() {
+    @include keyframes(bounceInUp) {
+        0% {
+            opacity: 0;
+            @include transform(translateY(2000px));
+        }
+        60% {
+            opacity: 1;
+            @include transform(translateY(-30px));
+        }
+        80% {
+            @include transform(translateY(10px));
+        }
+        100% {
+            @include transform(translateY(0));
+        }
+    }
+    .bounceInUp {
+        @include animation-name(bounceInUp);
+        @extend %bounce-base;
+    }
+}
+
+// bounceOut
+@mixin animate-bounceOut() {
+    @include keyframes(bounceOut) {
+        0% {
+            @include transform(scale(1));
+        }
+        25% {
+            @include transform(scale(.95));
+        }
+        75% {
+            opacity: 1;
+            @include transform(scale(1.1));
+        }
+        100% {
+            opacity: 0;
+            @include transform(scale(.3));
+        }
+    }
+    .bounceOut {
+        @include animation-name(bounceOut);
+        @extend %bounce-base;
+    }
+}
+
+// bounceOutDown
+@mixin animate-bounceOutDown() {
+    @include keyframes(bounceOutDown) {
+        0% {
+            @include transform(translateY(0));
+        }
+        20% {
+            opacity: 1;
+            @include transform(translateY(-20px));
+        }
+        100% {
+            opacity: 0;
+            @include transform(translateY(2000px));
+        }
+    }
+    .bounceOutDown {
+        @include animation-name(bounceOutDown);
+        @extend %bounce-base;
+    }
+}
+
+// bounceOutLeft
+@mixin animate-bounceOutLeft() {
+    @include keyframes(bounceOutLeft) {
+        0% {
+            @include transform(translateX(0));
+        }
+        20% {
+            opacity: 1;
+            @include transform(translateX(20px));
+        }
+        100% {
+            opacity: 0;
+            @include transform(translateX(-2000px));
+        }
+    }
+    .bounceOutLeft {
+        @include animation-name(bounceOutLeft);
+        @extend %bounce-base;
+    }
+}
+
+// bounceOutRight
+@mixin animate-bounceOutRight() {
+    @include keyframes(bounceOutRight) {
+        0% {
+            @include transform(translateX(0));
+        }
+        20% {
+            opacity: 1;
+            @include transform(translateX(-20px));
+        }
+        100% {
+            opacity: 0;
+            @include transform(translateX(2000px));
+        }
+    }
+    .bounceOutRight {
+        @include animation-name(bounceOutRight);
+        @extend %bounce-base;
+    }
+}
+
+// bounceOutUp
+@mixin animate-bounceOutUp() {
+    @include keyframes(bounceOutUp) {
+        0% {
+            @include transform(translateY(0));
+        }
+        20% {
+            opacity: 1;
+            @include transform(translateY(20px));
+        }
+        100% {
+            opacity: 0;
+            @include transform(translateY(-2000px));
+        }
+    }
+    .bounceOutUp {
+        @include animation-name(bounceOutUp);
+        @extend %bounce-base;
+    }
+}

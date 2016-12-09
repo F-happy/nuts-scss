@@ -1,6 +1,10 @@
 @charset "UTF-8";
-@import "../../library/mixin";
 @import "../../library/animate";
+
+%fade-base {
+    @include backface-visibility();
+    @include transform-style()
+}
 
 // fadeIn
 @mixin animate-fadeIn() {
@@ -14,7 +18,7 @@
     }
     .fadeIn {
         @include animation-name(fadeIn);
-        @extend %animate-base;
+        @extend %fade-base;
     }
 }
 
@@ -32,7 +36,7 @@
     }
     .fadeInDown {
         @include animation-name(fadeInDown);
-        @extend %animate-base;
+        @extend %fade-base;
     }
 }
 
@@ -51,7 +55,7 @@
 
     .fadeInDownBig {
         @include animation-name(fadeInDownBig);
-        @extend %animate-base;
+        @extend %fade-base;
     }
 }
 
@@ -69,7 +73,7 @@
     }
     .fadeInLeft {
         @include animation-name(fadeInLeft);
-        @extend %animate-base;
+        @extend %fade-base;
     }
 }
 
@@ -87,7 +91,7 @@
     }
     .fadeInLeftBig {
         @include animation-name(fadeInLeftBig);
-        @extend %animate-base;
+        @extend %fade-base;
     }
 }
 
@@ -105,7 +109,7 @@
     }
     .fadeInRight {
         @include animation-name(fadeInRight);
-        @extend %animate-base;
+        @extend %fade-base;
     }
 }
 
@@ -123,7 +127,7 @@
     }
     .fadeInRightBig {
         @include animation-name(fadeInRightBig);
-        @extend %animate-base;
+        @extend %fade-base;
     }
 }
 
@@ -141,7 +145,7 @@
     }
     .fadeInUp {
         @include animation-name(fadeInUp);
-        @extend %animate-base;
+        @extend %fade-base;
     }
 }
 
@@ -159,7 +163,7 @@
     }
     .fadeInUpBig {
         @include animation-name(fadeInUpBig);
-        @extend %animate-base;
+        @extend %fade-base;
     }
 }
 
@@ -175,7 +179,7 @@
     }
     .fadeOut {
         @include animation-name(fadeOut);
-        @extend %animate-base;
+        @extend %fade-base;
     }
 }
 
@@ -193,7 +197,7 @@
     }
     .fadeOutDown {
         @include animation-name(fadeOutDown);
-        @extend %animate-base;
+        @extend %fade-base;
     }
 }
 
@@ -211,7 +215,7 @@
     }
     .fadeOutDownBig {
         @include animation-name(fadeOutDownBig);
-        @extend %animate-base;
+        @extend %fade-base;
     }
 }
 
@@ -229,7 +233,7 @@
     }
     .fadeOutLeft {
         @include animation-name(fadeOutLeft);
-        @extend %animate-base;
+        @extend %fade-base;
     }
 }
 
@@ -247,7 +251,7 @@
     }
     .fadeOutLeftBig {
         @include animation-name(fadeOutLeftBig);
-        @extend %animate-base;
+        @extend %fade-base;
     }
 }
 
@@ -265,7 +269,7 @@
     }
     .fadeOutRight {
         @include animation-name(fadeOutRight);
-        @extend %animate-base;
+        @extend %fade-base;
     }
 }
 
@@ -283,7 +287,7 @@
     }
     .fadeOutRightBig {
         @include animation-name(fadeOutRightBig);
-        @extend %animate-base;
+        @extend %fade-base;
     }
 }
 
@@ -301,7 +305,7 @@
     }
     .fadeOutUp {
         @include animation-name(fadeOutUp);
-        @extend %animate-base;
+        @extend %fade-base;
     }
 }
 
@@ -319,6 +323,6 @@
     }
     .fadeOutUpBig {
         @include animation-name(fadeOutUpBig);
-        @extend %animate-base;
+        @extend %fade-base;
     }
 }

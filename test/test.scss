@@ -1,32 +1,93 @@
 @import "nuts-scss";
 @import "nuts-components/animate";
 
-.test {
-    @extend %animate-test;
+$prefix-list: webkit;
+
+.animate {
+    @include animate-flipOutY();
+    @include animate-flipOutX();
+    @include animate-flipInY();
+    @include animate-flipInX();
+    @include animate-flip();
+    @include animate-lightSpeedIn();
+    @include animate-lightSpeedOut();
+    @include animate-rotateIn();
+    @include animate-rotateInDownLeft();
+    @include animate-rotateInDownRight();
+    @include animate-rotateInUpLeft();
+    @include animate-rotateInUpRight();
+    @include animate-rotateOut();
+    @include animate-rotateOutDownLeft();
+    @include animate-rotateOutDownRight();
+    @include animate-rotateOutUpLeft();
+    @include animate-rotateOutUpRight();
+    @include animate-slideInDown();
+    @include animate-slideInLeft();
+    @include animate-slideInRight();
+    @include animate-slideOutLeft();
+    @include animate-slideOutRight();
+    @include animate-slideOutUp();
+    @include animate-hinge();
+    @include animate-rollIn();
+    @include animate-rollOut();
+    @include animate-bounceIn();
+    @include animate-bounceInDown();
+    @include animate-bounceInLeft();
+    @include animate-bounceInRight();
+    @include animate-bounceInUp();
+    @include animate-bounceOut();
+    @include animate-bounceOutDown();
+    @include animate-bounceOutLeft();
+    @include animate-bounceOutRight();
+    @include animate-bounceOutUp();
+    @include animate-bounce();
+    @include animate-flash();
+    @include animate-pulse();
+    @include animate-shake();
+    @include animate-swing();
+    @include animate-tada();
+    @include animate-wobble();
 }
 
-//$prefix-list: webkit;
-//
-//.test {
-//    @include box();
-//    @include prefixer(border-radius, 30px);
-//    @include border-box(100px);
-//    @include animation(marquee 2s ease 0s 1);
-//    @extend %border-1px;
-//    @include transform(translate3d(0, 0, 0));
-//    @include animation(down .3s ease-out 0s 1);
-//    @include clearfix();
-//    @include ellipsis(200px);
-//    color: shade(#f96f13, .3);
-//    @include box-emboss(#fff, #000);
-//    @include opacity(1);
-//}
-//
-//@include keyframes(down) {
-//    0% {
-//        @include transform(translate3d(0, -100%, 0));
-//    }
-//    100% {
-//        @include transform(translate3d(0, 0, 0));
-//    }
-//}
+@include animate-fadeIn();
+@include animate-fadeInDown();
+@include animate-fadeInDownBig();
+@include animate-fadeInLeft();
+@include animate-fadeInLeftBig();
+@include animate-fadeInRight();
+@include animate-fadeInRightBig();
+@include animate-fadeInUp();
+@include animate-fadeInUpBig();
+@include animate-fadeOut();
+@include animate-fadeOutDown();
+@include animate-fadeOutDownBig();
+@include animate-fadeOutLeft();
+@include animate-fadeOutLeftBig();
+@include animate-fadeOutRight();
+@include animate-fadeOutRightBig();
+@include animate-fadeOutUp();
+@include animate-fadeOutUpBig();
+
+.test {
+    @include box();
+    @include prefixer(border-radius, 30px);
+    @include border-box(100px);
+    @include animation(marquee 2s ease 0s 1);
+    @extend %border-1px;
+    @include transform(translate3d(0, 0, 0));
+    @include animation(down .3s ease-out 0s 1);
+    @include clearfix();
+    @include ellipsis(200px);
+    color: shade(#f96f13, .3);
+    @include box-emboss(#fff, #000);
+    @include opacity(1);
+}
+
+@include keyframes(down) {
+    0% {
+        @include transform(translate3d(0, -100%, 0));
+    }
+    100% {
+        @include transform(translate3d(0, 0, 0));
+    }
+}

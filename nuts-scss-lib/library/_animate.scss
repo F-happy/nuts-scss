@@ -14,8 +14,25 @@
     @include prefixer(animation, $value);
 }
 
-@mixin transform($value) {
+@mixin transform($value...) {
     @include prefixer(transform, $value);
+}
+
+@mixin transform-origin($axes) {
+    // x-axis - left | center | right  | length | %
+    // y-axis - top  | center | bottom | length | %
+    // z-axis -                          length
+    @include prefixer(transform-origin, $axes);
+}
+
+@mixin transform-style($style: preserve-3d) {
+    // flat | preserve-3d
+    @include prefixer(transform-style, $style);
+}
+
+@mixin backface-visibility($visibility:hidden) {
+    // visible | hidden
+    @include prefixer(backface-visibility, $visibility);
 }
 
 // 根据前缀列表中的前缀来进行判断增加
@@ -98,4 +115,21 @@
     } @else {
         @include prefixer(animation-play-state, paused);
     }
+}
+
+// perspective 属性前缀
+@mixin perspective($depth: none) {
+    // none | <length>
+    @include prefixer(perspective, $depth);
+}
+
+@mixin perspective-origin($value: 50% 50%) {
+    // x-axis - left | center | right  | length | %
+    // y-axis - top  | center | bottom | length | %
+    @include prefixer(perspective-origin, $value);
+}
+
+@mixin backface-visibility($visibility:hidden) {
+    // visible | hidden
+    @include prefixer(backface-visibility, $visibility);
 }

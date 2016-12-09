@@ -1,0 +1,195 @@
+@charset "UTF-8";
+@import "../../library/animate";
+
+%rotate-base {
+    @include backface-visibility();
+    @include transform-style()
+}
+
+// rotateIn
+@mixin animate-rotateIn() {
+    @include keyframes(rotateIn) {
+        0% {
+            opacity: 0;
+            @include transform(rotate(-200deg));
+        }
+        100% {
+            opacity: 1;
+            @include transform(rotate(0deg));
+        }
+    }
+    .rotateIn {
+        @include animation-name(rotateIn);
+        @extend %rotate-base;
+    }
+}
+
+// rotateInDownLeft
+@mixin animate-rotateInDownLeft() {
+    @include keyframes(rotateInDownLeft) {
+        0% {
+            opacity: 0;
+            @include transform(rotate(-90deg));
+        }
+        100% {
+            opacity: 1;
+            @include transform(rotate(0deg));
+        }
+    }
+    .rotateInDownLeft {
+        @include transform-origin(left bottom);
+        @include animation-name(rotateInDownLeft);
+        @extend %rotate-base;
+    }
+}
+
+// rotateInDownRight
+@mixin animate-rotateInDownRight() {
+    @include keyframes(rotateInDownRight) {
+        0% {
+            opacity: 0;
+            @include transform(rotate(90deg));
+        }
+        100% {
+            opacity: 1;
+            @include transform(rotate(0deg));
+        }
+    }
+    .rotateInDownRight {
+        @include transform-origin(right bottom);
+        @include animation-name(rotateInDownRight);
+        @extend %rotate-base;
+    }
+}
+
+// rotateInUpLeft
+@mixin animate-rotateInUpLeft() {
+    @include keyframes(rotateInUpLeft) {
+        0% {
+            opacity: 0;
+            @include transform(rotate(90deg));
+        }
+        100% {
+            opacity: 1;
+            @include transform(rotate(0deg));
+        }
+    }
+    .rotateInUpLeft {
+        @include transform-origin(left bottom);
+        @include animation-name(rotateInUpLeft);
+        @extend %rotate-base;
+    }
+}
+
+// rotateInUpRight
+@mixin animate-rotateInUpRight() {
+    @include keyframes(rotateInUpRight) {
+        0% {
+            opacity: 0;
+            @include transform(rotate(-90deg));
+        }
+        100% {
+            opacity: 1;
+            @include transform(rotate(0deg));
+        }
+    }
+    .rotateInUpRight {
+        @include transform-origin(right bottom);
+        @include animation-name(rotateInUpRight);
+        @extend %rotate-base;
+    }
+}
+
+// rotateOut
+@mixin animate-rotateOut() {
+    @include keyframes(rotateOut) {
+        0% {
+            opacity: 1;
+            @include transform(rotate(0deg));
+        }
+        100% {
+            opacity: 0;
+            @include transform(rotate(200deg));
+        }
+    }
+    .rotateOut {
+        @include animation-name(rotateOut);
+        @extend %rotate-base;
+    }
+}
+
+// rotateOutDownLeft
+@mixin animate-rotateOutDownLeft() {
+    @include keyframes(rotateOutDownLeft) {
+        0% {
+            opacity: 1;
+            @include transform(rotate(0deg));
+        }
+        100% {
+            opacity: 0;
+            @include transform(rotate(90deg));
+        }
+    }
+    .rotateOutDownLeft {
+        @include transform-origin(left bottom);
+        @include animation-name(rotateOutDownLeft);
+        @extend %rotate-base;
+    }
+}
+
+// rotateOutDownRight
+@mixin animate-rotateOutDownRight() {
+    @include keyframes(rotateOutDownRight) {
+        0% {
+            opacity: 1;
+            @include transform(rotate(0deg));
+        }
+        100% {
+            opacity: 0;
+            @include transform(rotate(-90deg));
+        }
+    }
+    .rotateOutDownRight {
+        @include transform-origin(right bottom);
+        @include animation-name(rotateOutDownRight);
+        @extend %rotate-base;
+    }
+}
+
+// rotateOutUpLeft
+@mixin animate-rotateOutUpLeft() {
+    @include keyframes(rotateOutUpLeft) {
+        0% {
+            opacity: 1;
+            @include transform(rotate(0deg));
+        }
+        100% {
+            opacity: 0;
+            @include transform(rotate(-90deg));
+        }
+    }
+    .rotateOutUpLeft {
+        @include transform-origin(left bottom);
+        @include animation-name(rotateOutUpLeft);
+        @extend %rotate-base;
+    }
+}
+
+// rotateOutUpRight
+@mixin animate-rotateOutUpRight() {
+    @include keyframes(rotateOutUpRight) {
+        0% {
+            opacity: 1;
+            @include transform(rotate(0deg));
+        }
+        100% {
+            opacity: 0;
+            @include transform(rotate(90deg));
+        }
+    }
+    .rotateOutUpRight {
+        @include transform-origin(right bottom);
+        @include animation-name(rotateOutUpRight);
+        @extend %rotate-base;
+    }
+}
