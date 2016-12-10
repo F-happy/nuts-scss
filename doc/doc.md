@@ -18,3 +18,8 @@
 [mixin说明](./mixin.md)
 
 [动画模块说明](./animate.md)
+
+# 组件
+
+## animate
+将[animate.css](https://github.com/daneden/animate.css)动画库转成scss版本。api 保持和 animate 一致，具体使用可参看官方 [demo](https://daneden.github.io/animate.css)
