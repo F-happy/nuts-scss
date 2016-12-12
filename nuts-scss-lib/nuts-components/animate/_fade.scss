@@ -1,0 +1,328 @@
+@charset "UTF-8";
+@import "../../library/animate";
+
+%fade-base {
+    @include backface-visibility();
+    @include transform-style()
+}
+
+// fadeIn
+@mixin animate-fadeIn() {
+    @include keyframes(fadeIn) {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    .fadeIn {
+        @include animation-name(fadeIn);
+        @extend %fade-base;
+    }
+}
+
+// fadeInDown
+@mixin animate-fadeInDown() {
+    @include keyframes(fadeInDown) {
+        0% {
+            opacity: 0;
+            @include transform(translateY(-20px));
+        }
+        100% {
+            opacity: 1;
+            @include transform(translateY(0));
+        }
+    }
+    .fadeInDown {
+        @include animation-name(fadeInDown);
+        @extend %fade-base;
+    }
+}
+
+// fadeInDownBig
+@mixin animate-fadeInDownBig() {
+    @include keyframes(fadeInDownBig) {
+        0% {
+            opacity: 0;
+            @include transform(translateY(-2000px));
+        }
+        100% {
+            opacity: 1;
+            @include transform(translateY(0));
+        }
+    }
+
+    .fadeInDownBig {
+        @include animation-name(fadeInDownBig);
+        @extend %fade-base;
+    }
+}
+
+// fadeInLeft
+@mixin animate-fadeInLeft() {
+    @include keyframes(fadeInLeft) {
+        0% {
+            opacity: 0;
+            @include transform(translateX(-20px));
+        }
+        100% {
+            opacity: 1;
+            @include transform(translateX(0));
+        }
+    }
+    .fadeInLeft {
+        @include animation-name(fadeInLeft);
+        @extend %fade-base;
+    }
+}
+
+// fadeInLeftBig
+@mixin animate-fadeInLeftBig() {
+    @include keyframes(fadeInLeftBig) {
+        0% {
+            opacity: 0;
+            @include transform(translateX(-2000px));
+        }
+        100% {
+            opacity: 1;
+            @include transform(translateX(0));
+        }
+    }
+    .fadeInLeftBig {
+        @include animation-name(fadeInLeftBig);
+        @extend %fade-base;
+    }
+}
+
+// fadeInRight
+@mixin animate-fadeInRight() {
+    @include keyframes(fadeInRight) {
+        0% {
+            opacity: 0;
+            @include transform(translateX(20px));
+        }
+        100% {
+            opacity: 1;
+            @include transform(translateX(0));
+        }
+    }
+    .fadeInRight {
+        @include animation-name(fadeInRight);
+        @extend %fade-base;
+    }
+}
+
+// fadeInRightBig
+@mixin animate-fadeInRightBig() {
+    @include keyframes(fadeInRightBig) {
+        0% {
+            opacity: 0;
+            @include transform(translateX(2000px));
+        }
+        100% {
+            opacity: 1;
+            @include transform(translateX(0));
+        }
+    }
+    .fadeInRightBig {
+        @include animation-name(fadeInRightBig);
+        @extend %fade-base;
+    }
+}
+
+// fadeInUp
+@mixin animate-fadeInUp() {
+    @include keyframes(fadeInUp) {
+        0% {
+            opacity: 0;
+            @include transform(translateY(20px));
+        }
+        100% {
+            opacity: 1;
+            @include transform(translateY(0));
+        }
+    }
+    .fadeInUp {
+        @include animation-name(fadeInUp);
+        @extend %fade-base;
+    }
+}
+
+// fadeInUpBig
+@mixin animate-fadeInUpBig() {
+    @include keyframes(fadeInUpBig) {
+        0% {
+            opacity: 0;
+            @include transform(translateY(2000px));
+        }
+        100% {
+            opacity: 1;
+            @include transform(translateY(0));
+        }
+    }
+    .fadeInUpBig {
+        @include animation-name(fadeInUpBig);
+        @extend %fade-base;
+    }
+}
+
+// fadeOut
+@mixin animate-fadeOut() {
+    @include keyframes(fadeOut) {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    .fadeOut {
+        @include animation-name(fadeOut);
+        @extend %fade-base;
+    }
+}
+
+// fadeOutDown
+@mixin animate-fadeOutDown() {
+    @include keyframes(fadeOutDown) {
+        0% {
+            opacity: 1;
+            @include transform(translateY(0));
+        }
+        100% {
+            opacity: 0;
+            @include transform(translateY(20px));
+        }
+    }
+    .fadeOutDown {
+        @include animation-name(fadeOutDown);
+        @extend %fade-base;
+    }
+}
+
+// fadeOutDownBig
+@mixin animate-fadeOutDownBig() {
+    @include keyframes(fadeOutDownBig) {
+        0% {
+            opacity: 1;
+            @include transform(translateY(0));
+        }
+        100% {
+            opacity: 0;
+            @include transform(translateY(2000px));
+        }
+    }
+    .fadeOutDownBig {
+        @include animation-name(fadeOutDownBig);
+        @extend %fade-base;
+    }
+}
+
+// fadeOutLeft
+@mixin animate-fadeOutLeft() {
+    @include keyframes(fadeOutLeft) {
+        0% {
+            opacity: 1;
+            @include transform(translateX(0));
+        }
+        100% {
+            opacity: 0;
+            @include transform(translateX(-20px));
+        }
+    }
+    .fadeOutLeft {
+        @include animation-name(fadeOutLeft);
+        @extend %fade-base;
+    }
+}
+
+// fadeOutLeftBig
+@mixin animate-fadeOutLeftBig() {
+    @include keyframes(fadeOutLeftBig) {
+        0% {
+            opacity: 1;
+            @include transform(translateX(0));
+        }
+        100% {
+            opacity: 0;
+            @include transform(translateX(-2000px));
+        }
+    }
+    .fadeOutLeftBig {
+        @include animation-name(fadeOutLeftBig);
+        @extend %fade-base;
+    }
+}
+
+// fadeOutRight
+@mixin animate-fadeOutRight() {
+    @include keyframes(fadeOutRight) {
+        0% {
+            opacity: 1;
+            @include transform(translateX(0));
+        }
+        100% {
+            opacity: 0;
+            @include transform(translateX(20px));
+        }
+    }
+    .fadeOutRight {
+        @include animation-name(fadeOutRight);
+        @extend %fade-base;
+    }
+}
+
+// fadeOutRightBig
+@mixin animate-fadeOutRightBig() {
+    @include keyframes(fadeOutRightBig) {
+        0% {
+            opacity: 1;
+            @include transform(translateX(0));
+        }
+        100% {
+            opacity: 0;
+            @include transform(translateX(2000px));
+        }
+    }
+    .fadeOutRightBig {
+        @include animation-name(fadeOutRightBig);
+        @extend %fade-base;
+    }
+}
+
+// fadeOutUp
+@mixin animate-fadeOutUp() {
+    @include keyframes(fadeOutUp) {
+        0% {
+            opacity: 1;
+            @include transform(translateY(0));
+        }
+        100% {
+            opacity: 0;
+            @include transform(translateY(-20px));
+        }
+    }
+    .fadeOutUp {
+        @include animation-name(fadeOutUp);
+        @extend %fade-base;
+    }
+}
+
+// fadeOutUpBig
+@mixin animate-fadeOutUpBig() {
+    @include keyframes(fadeOutUpBig) {
+        0% {
+            opacity: 1;
+            @include transform(translateY(0));
+        }
+        100% {
+            opacity: 0;
+            @include transform(translateY(-2000px));
+        }
+    }
+    .fadeOutUpBig {
+        @include animation-name(fadeOutUpBig);
+        @extend %fade-base;
+    }
+}

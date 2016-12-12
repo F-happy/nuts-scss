@@ -11,16 +11,16 @@
 
 
 ### 安装：
-```
-npm install --save nuts-scss
+```bash
+$ npm install --save nuts-scss
 ```
 接下来你就可以在 node-sass 中配置 scss 库了。
 
 例子：
 
 ```javascript
-var gulp = require('gulp'),
-    sass = require('gulp-sass');
+const gulp = require('gulp'),
+      sass = require('gulp-sass');
 
 gulp.task('test', ()=> {
     gulp.src('./test/*.scss')
@@ -31,6 +31,30 @@ gulp.task('test', ()=> {
         .pipe(gulp.dest('./test/'));
 });
 ```
+
+## 使用：
+
+```scss
+@import "nuts-scss"
+
+.test {
+    @include box();
+}
+```
+
+## 组件：
+在 V1.4.0 之后我加入了组件功能，除了原始的基础样式之外还提供了一些常用的样式组件，但是这些组件并不是所有情况下都需要使用，因此并没有包含在基础库中。所以如果需要使用，需要如下引用：
+
+```scss
+@import "nuts-scss"
+@import "nuts-components/animate";
+
+.animate {
+    @include animate-flipOutY();
+}
+```
+更多组件的文档请查看下面的文档说明。
+
 
 ## [文档 API](./doc/doc.md)
 

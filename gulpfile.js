@@ -3,10 +3,10 @@
  */
 "use strict";
 
-var gulp = require('gulp'),
-    sass = require('gulp-sass');
+const gulp = require('gulp'),
+      sass = require('gulp-sass');
 
-gulp.task('test', ()=> {
+gulp.task('test', () => {
     gulp.src('./test/*.scss')
         .pipe(sass({
             includePaths: require('./index').includePaths,
@@ -15,6 +15,6 @@ gulp.task('test', ()=> {
         .pipe(gulp.dest('./test/'));
 });
 
-gulp.task('test:watch', ()=> {
+gulp.task('test:watch', () => {
     gulp.watch('./test/*.scss', ['test']);
 });

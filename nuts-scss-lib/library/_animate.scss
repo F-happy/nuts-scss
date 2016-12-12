@@ -9,13 +9,30 @@
     //（设置进行转换的元素的背面在面对用户时是否可见：隐藏）
 }
 
-@mixin animation($value) {
+@mixin animation($value...) {
     @extend %animate-base;
     @include prefixer(animation, $value);
 }
 
-@mixin transform($value) {
+@mixin transform($value...) {
     @include prefixer(transform, $value);
+}
+
+@mixin transform-origin($axes) {
+    // x-axis - left | center | right  | length | %
+    // y-axis - top  | center | bottom | length | %
+    // z-axis -                          length
+    @include prefixer(transform-origin, $axes);
+}
+
+@mixin transform-style($style: preserve-3d) {
+    // flat | preserve-3d
+    @include prefixer(transform-style, $style);
+}
+
+@mixin backface-visibility($visibility:hidden) {
+    // visible | hidden
+    @include prefixer(backface-visibility, $visibility);
 }
 
 // 根据前缀列表中的前缀来进行判断增加
@@ -47,4 +64,72 @@
             @content;
         }
     }
+}
+
+// animation 属性前缀
+@mixin animation-name($names...) {
+    @include prefixer(animation-name, $names);
+}
+
+@mixin animation-duration($times...) {
+    @include prefixer(animation-duration, $times);
+}
+
+@mixin animation-timing-function($motions...) {
+    // timing-function
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/timing-function
+    @include prefixer(animation-timing-function, $motions);
+}
+
+@mixin animation-delay($times...) {
+    @include prefixer(animation-delay, $times);
+}
+
+@mixin animation-iteration-count($values...) {
+    // infinite | <number>
+    @if length($values) >= 1 {
+        @include prefixer(animation-iteration-count, $values);
+    } @else {
+        @include prefixer(animation-iteration-count, infinite);
+    }
+}
+
+@mixin animation-direction($directions...) {
+    // normal | alternate | reverse | alternate-reverse
+    @include prefixer(animation-direction, $directions);
+}
+
+@mixin animation-fill-mode($modes...) {
+    // none | forwards | backwards | both
+    @if length($modes) >= 1 {
+        @include prefixer(animation-fill-mode, $modes);
+    } @else {
+        @include prefixer(animation-fill-mode, forwards);
+    }
+}
+
+@mixin animation-play-state($states...) {
+    // running | paused
+    @if length($states) >= 1 {
+        @include prefixer(animation-play-state, $states);
+    } @else {
+        @include prefixer(animation-play-state, paused);
+    }
+}
+
+// perspective 属性前缀
+@mixin perspective($depth: none) {
+    // none | <length>
+    @include prefixer(perspective, $depth);
+}
+
+@mixin perspective-origin($value: 50% 50%) {
+    // x-axis - left | center | right  | length | %
+    // y-axis - top  | center | bottom | length | %
+    @include prefixer(perspective-origin, $value);
+}
+
+@mixin backface-visibility($visibility:hidden) {
+    // visible | hidden
+    @include prefixer(backface-visibility, $visibility);
 }
