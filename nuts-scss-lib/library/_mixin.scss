@@ -81,3 +81,93 @@
     $opacity-ie: $opacity * 100;
     filter: alpha(opacity=$opacity-ie); //IE8
 }
+
+// 三角形模块
+@mixin triangle($direction, $size, $borderColor) {
+    content: "";
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    @if $direction == top {
+        border-bottom: $size solid $borderColor;
+        border-left: $size dashed transparent;
+        border-right: $size dashed transparent;
+    } @else if $direction == right {
+        border-left: $size solid $borderColor;
+        border-top: $size dashed transparent;
+        border-bottom: $size dashed transparent;
+    } @else if $direction == bottom {
+        border-top: $size solid $borderColor;
+        border-left: $size dashed transparent;
+        border-right: $size dashed transparent;
+    } @else if $direction == left {
+        border-right: $size solid $borderColor;
+        border-top: $size dashed transparent;
+        border-bottom: $size dashed transparent;
+    }
+}
+
+// Gradients
+// 水平渐变，从左往右
+// @include gradient-horizontal(#333, #ccc);
+// https://developer.mozilla.org/zh-CN/docs/Web/CSS/linear-gradient
+@mixin gradient-horizontal($gradient...) {
+    @each $prefix in $prefix-list {
+        background-image: -#{$prefix}-linear-gradient(left, $gradient);
+    }
+    background-image: linear-gradient(to right, $gradient); // Standard, IE10
+}
+
+// 水平渐变，从左往右，平铺
+// @include gradient-horizontal-repeating(#333 5%, #ccc 10%);
+@mixin gradient-horizontal-repeating($gradient...) {
+    @each $prefix in $prefix-list {
+        background-image: -#{$prefix}-repeating-linear-gradient(left, $gradient);
+    }
+    background-image: repeating-linear-gradient(to right, $gradient); // Standard, IE10
+}
+
+// 垂直渐变，从上往下
+// @include gradient-vertical(#333 30%, #ccc);
+@mixin gradient-vertical($gradient...) {
+    @each $prefix in $prefix-list {
+        background-image: -#{$prefix}-linear-gradient(top, $gradient);
+    }
+    background-image: linear-gradient(to bottom, $gradient); // Standard, IE10
+}
+
+// 垂直渐变，从上往下，平铺
+// @include gradient-vertical-repeating(#333 30%, #ccc 50%);
+@mixin gradient-vertical-repeating($gradient...) {
+    @each $prefix in $prefix-list {
+        background-image: -#{$prefix}-repeating-linear-gradient(top, $gradient);
+    }
+    background-image: repeating-linear-gradient(to bottom, $gradient); // Standard, IE10
+}
+
+// 角度渐变
+// @include gradient-angle(45deg, #333 30%, #ccc);
+@mixin gradient-angle($gradient...) {
+    @each $prefix in $prefix-list {
+        background-image: -#{$prefix}-linear-gradient($gradient);
+    }
+    background-image: linear-gradient($gradient); // Standard, IE1
+}
+
+// 角度渐变
+// @include gradient-angle(45deg, #333 30%, #ccc 50%);
+@mixin gradient-angle-repeating($gradient...) {
+    @each $prefix in $prefix-list {
+        background-image: -#{$prefix}-repeating-linear-gradient($gradient);
+    }
+    background-image: repeating-linear-gradient($gradient); // Standard, IE1
+}
+
+// 径向渐变，可以写点简单的
+// 如：@include gradient-radial(#00f,#fff);
+@mixin gradient-radial($gradient...) {
+    @each $prefix in $prefix-list {
+        background-image: -#{$prefix}-radial-gradient($gradient) no-repeat;
+    }
+    background-image: radial-gradient($gradient) no-repeat; // Standard, IE1
+}
