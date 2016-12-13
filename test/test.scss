@@ -1,5 +1,6 @@
 @import "nuts-scss";
 @import "nuts-components/animate";
+@import "nuts-components/flex";
 
 $prefix-list: webkit;
 
@@ -101,4 +102,8 @@ $prefix-list: webkit;
 
 .triangle {
     @include triangle(top, 20px, #fff);
+}
+
+.flex {
+    @include display-flex();
 }
