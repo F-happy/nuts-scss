@@ -1,5 +1,6 @@
 @import "nuts-scss";
 @import "nuts-components/animate";
+@import "nuts-components/flex";
 
 $prefix-list: webkit;
 
@@ -69,6 +70,13 @@ $prefix-list: webkit;
 @include animate-fadeOutUpBig();
 
 .test {
+    @include gradient-horizontal(#333, #ccc);
+    @include gradient-horizontal-repeating(#333 5%, #ccc 10%);
+    @include gradient-vertical(#333 30%, #ccc);
+    @include gradient-vertical-repeating(#333 30%, #ccc 50%);
+    @include gradient-angle(45deg, #333 30%, #ccc);
+    @include gradient-angle(45deg, #333 30%, #ccc 50%);
+    @include gradient-radial(#00F, #fff);
     @include box();
     @include prefixer(border-radius, 30px);
     @include border-box(100px);
@@ -90,4 +98,12 @@ $prefix-list: webkit;
     100% {
         @include transform(translate3d(0, 0, 0));
     }
+}
+
+.triangle {
+    @include triangle(top, 20px, #fff);
+}
+
+.flex {
+    @include display-flex();
 }

@@ -35,7 +35,7 @@ gulp.task('test', ()=> {
 ## 使用：
 
 ```scss
-@import "nuts-scss"
+@import "nuts-scss";
 
 .test {
     @include box();
@@ -43,10 +43,10 @@ gulp.task('test', ()=> {
 ```
 
 ## 组件：
-在 V1.4.0 之后我加入了组件功能，除了原始的基础样式之外还提供了一些常用的样式组件，但是这些组件并不是所有情况下都需要使用，因此并没有包含在基础库中。所以如果需要使用，需要如下引用：
+在 V1.4.0 之后加入了组件功能，除了原始的基础样式之外还提供了一些常用的样式组件，但是这些组件并不是所有情况下都需要使用，因此并没有包含在基础库中。所以如果需要使用，需要如下引用：
 
 ```scss
-@import "nuts-scss"
+@import "nuts-scss";
 @import "nuts-components/animate";
 
 .animate {

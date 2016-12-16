@@ -1,6 +1,6 @@
 {
   "name": "nuts-scss",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "node-sass 下的一个 scss 基础样式库",
   "main": "index.js",
   "scripts": {

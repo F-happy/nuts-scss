@@ -1,0 +1,162 @@
+@charset "UTF-8";
+// flex 组件
+// 用于flex的兼容变量
+$flex-old: true !default; //09版本 用于兼容移动端，-webkit前缀
+$flex-mid: true !default; //用于ie10 -ms前缀
+
+// 用于在值上加前缀, 默认这里将输出webkit前缀，moz前缀和标准
+@mixin flex-prefixer-value($property, $value, $prefixes: webkit moz) {
+    @each $prefix in $prefixes {
+        #{$property}: -#{$prefix}-#{$value};
+    }
+    #{$property}: $value;
+}
+
+// 用于在属性上加前缀
+@mixin flex-prefixer($property, $value, $prefixes: webkit moz) {
+    @each $prefix in $prefixes {
+        -#{$prefix}-#{$property}: $value;
+        #{$property}: $value;
+    }
+}
+
+//-----------------------------------------------------
+// flex-old和flex-mid分别应用与old版本和mid版本
+//-----------------------------------------------------
+@mixin flex-old($property,$value,$propertyPrefix:true) {
+    @if $flex-old {
+        @if $propertyPrefix {
+            -webkit-#{$property} : $value;
+        } @else {
+            #{$property} : -webkit-#{$value};
+        }
+    }
+}
+
+@mixin flex-mid($property,$value,$propertyPrefix:true) {
+    @if $flex-mid {
+        @if $propertyPrefix {
+            -ms-#{$property} : $value;
+        } @else {
+            #{$property} : -ms-#{$value};
+        }
+    }
+}
+
+@mixin display-flex($flex: flex) {
+    // flex | inline-flex
+    @if $flex == flex {
+        @include flex-old(display, box, false);
+        @include flex-mid(display, flexbox, false);
+    } @else if $flex == inline-flex {
+        @include flex-old(display, inline-box, false);
+        @include flex-mid(display, inline-flexbox, false);
+    }
+    @include flex-prefixer-value(display, $flex);
+}
+
+@mixin flex-direction($direction: column) {
+    // row | row-reverse | column | column-reverse
+    @if $direction == row {
+        @include flex-old(box-orient, horizontal);
+    } @else if $direction == column {
+        @include flex-old(box-orient, vertical);
+    } @else if $direction == row-reverse {
+        @include flex-old(box-orient, horizontal);
+        @include flex-old(box-direction, reverse);
+    } @else if $direction == column-reverse {
+        @include flex-old(box-orient, vertical);
+        @include flex-old(box-direction, reverse);
+    }
+    @include flex-mid(flex-direction, $direction);
+    @include flex-prefixer(flex-direction, $direction, webkit moz);
+}
+
+@mixin flex-wrap($wrap: wrap) {
+    // nowrap | wrap | wrap-reverse
+    // old版本不支持wrap-reverse
+    @if $wrap == wrap {
+        @include flex-old(box-lines, multiple);
+    } @else if $wrap == nowrap {
+        @include flex-old(box-lines, single);
+    }
+    @include flex-mid(flex-wrap, $wrap);
+    @include flex-prefixer(flex-wrap, $wrap, webkit moz);
+}
+
+// flex-flow is a shorthand for flex-direction and flex-wrap
+@mixin flex-flow($flow: row wrap) {
+    // direction || wrap
+    @include flex-prefixer(flex-flow, $flow, webkit moz);
+}
+
+@mixin order($num: -1) {
+    @include flex-old(box-ordinal-group, $num);
+    @include flex-mid(flex-order, $num);
+    @include flex-prefixer(order, $num, webkit moz);
+}
+
+@mixin justify-content($align: space-between) {
+    // flex-start | flex-end | center | space-between | space-around
+    @if $align == flex-start {
+        @include flex-old(box-pack, start);
+        @include flex-mid(flex-pack, start);
+    } @else if $align == flex-end {
+        @include flex-old(box-pack, end);
+        @include flex-mid(flex-pack, end);
+    } @else if $align == space-between {
+        @include flex-old(box-pack, justify);
+        @include flex-mid(flex-pack, justify);
+    } @else if $align == space-around {
+        @include flex-mid(flex-pack, distribute);
+    } @else {
+        @include flex-old(box-pack, $align);
+        @include flex-mid(flex-pack, $align);
+    }
+    @include flex-prefixer(justify-content, $align, webkit moz);
+}
+
+@mixin align-items($align: center) {
+    // flex-start | flex-end | center | baseline | stretch
+    @if $align == flex-start {
+        @include flex-old(box-align, start);
+        @include flex-mid(flex-align, start);
+    } @else if $align == flex-end {
+        @include flex-old(box-align, end);
+        @include flex-mid(flex-align, end);
+    } @else {
+        @include flex-old(box-align, $align);
+        @include flex-mid(flex-align, $align);
+    }
+    @include flex-prefixer(align-items, $align, webkit moz);
+}
+
+@mixin align-content($align: flex-start) {
+    // stretch | flex-start | flex-end | center | space-between | space-around
+    // old不支持
+    @if $align == flex-start {
+        @include flex-mid(flex-line-pack, start);
+    } @else if $align == flex-end {
+        @include flex-mid(flex-line-pack, end);
+    } @else if $align == space-between {
+        @include flex-mid(flex-line-pack, justify);
+    } @else if $align == space-around {
+        @include flex-mid(flex-line-pack, distribute);
+    } @else {
+        @include flex-mid(flex-line-pack, $align);
+    }
+    @include flex-prefixer(align-content, $align, webkit moz);
+}
+
+@mixin align-self($align: flex-start) {
+    // auto | flex-start | flex-end | center | baseline | stretch
+    // old不支持
+    @if $align == flex-start {
+        @include flex-mid(flex-item-align, start);
+    } @else if $align == flex-end {
+        @include flex-mid(flex-item-align, end);
+    } @else {
+        @include flex-mid(flex-item-align, $align);
+    }
+    @include flex-prefixer(align-self, $align, webkit moz);
+}
